@@ -1,0 +1,341 @@
+.button {
+  all: unset;
+
+  width: fit-content;
+
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  gap: 8px;
+
+  border-radius: 8px;
+  cursor: pointer;
+
+  transition: color .2s, background-color .2s, border .2s, box-shadow .2s;
+
+  .buttonIcon {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+  }
+}
+
+.large {
+  padding: 14px 20px;
+  box-shadow: var(--drop-shadow-small);
+}
+
+.medium {
+  padding: 10px 16px;
+  box-shadow: var(--drop-shadow-xsmall);
+}
+
+.small {
+  padding: 8px 12px;
+  box-shadow: var(--drop-shadow-xsmall);
+}
+
+@mixin primary($isDestrutive) {
+  color: #FFF;
+
+  @if $isDestrutive {
+    border: 1px solid var(--red-600);
+    background-color: var(--red-500);
+    box-shadow: var(--drop-shadow-small);
+
+    &:is(:hover) {
+      border-color: var(--red-600);
+      background-color: var(--red-600);
+    }
+
+    &:is(:active) {
+      border-color: var(--red-400);
+      background-color: var(--red-600);
+    }
+
+    &:is(:focus) {
+      border-color: var(--red-400);
+      background-color: var(--red-600);
+      box-shadow: var(--focus-ring-2px-destructive-100);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--red-200);
+      border-color: var(--red-400);
+      background-color: var(--red-300);
+    }
+  } @else {
+    border: 1px solid var(--primary-500);
+    background-color: var(--primary-500);
+
+    &:is(:hover) {
+      background-color: var(--primary-600);
+    }
+
+    &:is(:active) {
+      color: var(--primary-200);
+      border-color: var(--primary-700);
+    }
+
+    &:is(:focus) {
+      color: var(--primary-50);
+      background-color: var(--primary-600);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--primary-100);
+      border-color: var(--primary-400);
+      background-color: var(--primary-300);
+    }
+  }
+}
+.primary.isNotDestructive { @include primary(false) }
+.primary.isDestructive { @include primary(true) }
+
+@mixin secondary($isDestructive) {
+  @if $isDestructive {
+    color: var(--red-500);
+    border: 1px solid var(--red-200);
+    background-color: var(--red-50);
+    box-shadow: var(--drop-shadow-small);
+
+    &:is(:hover) {
+      color: var(--red-600);
+      border: 1px solid var(--red-200);
+      background-color: var(--red-100);
+    }
+
+    &:is(:active) {
+      border-color: var(--red-200);
+      background-color: var(--red-100);
+    }
+
+    &:is(:focus) {
+      border-color: var(--red-200);
+      background-color: var(--red-100);
+      box-shadow: var(--focus-ring-2px-red-100);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--red-300);
+      border-color: var(--red-200);
+      background-color: var(--red-50);
+    }
+  } @else {
+    color: var(--primary-500);
+    border: 1px solid var(--primary-100);
+    background-color: var(--primary-50);
+
+    &:is(:hover) {
+      color: var(--primary-600);
+      background-color: var(--primary-100);
+    }
+
+    &:is(:active) {
+      border-color: var(--primary-200);
+      background-color: var(--primary-100);
+    }
+
+    &:is(:focus) {
+      border-color: var(--primary-200);
+      background-color: var(--primary-100);
+      box-shadow: var(--focus-ring-2px-primary-100);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--primary-300);
+      border-color: var(--primary-100);
+      background-color: var(--primary-50);
+    }
+  }
+}
+.secondary.isNotDestructive {@include secondary(false)}
+.secondary.isDestructive {@include secondary(true)}
+
+@mixin tertiary($isDestructive) {
+  @if $isDestructive {
+    color: var(--red-500);
+    border: 1px solid var(--red-200);
+    background-color: #FFF;
+    box-shadow: var(--drop-shadow-small);
+
+    &:is(:hover) {
+      border-color: var(--red-300);
+      background-color: var(--red-50);
+    }
+
+    &:is(:active) {
+      color: var(--red-400);
+      border-color: var(--red-300);
+      background-color: var(--red-50);
+    }
+
+    &:is(:focus) {
+      border-color: var(--red-300);
+      background-color: var(--red-50);
+      box-shadow: var(--focus-ring-2px-red-100);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--red-300);
+      border-color: var(--red-200);
+      background-color: #FFF;
+    }
+  } @else {
+    color: var(--neutral-700);
+    border: 1px solid var(--neutral-100);
+    background-color: #FFF;
+
+    &:is(:hover) {
+      border-color: var(--neutral-300);
+      background-color: var(--neutral-50);
+    }
+
+    &:is(:active) {
+      color: var(--neutral-500);
+      border-color: var(--neutral-300);
+      background-color: var(--neutral-50);
+    }
+
+    &:is(:focus) {
+      border-color: var(--neutral-300);
+      background-color: var(--neutral-50);
+      box-shadow: var(--focus-ring-2px-neutral-100);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--neutral-300);
+      border-color: var(--neutral-200);
+      background-color: #FFF;
+    }
+  }
+}
+.tertiary.isNotDestructive {@include tertiary(false)}
+.tertiary.isDestructive {@include tertiary(true)}
+
+@mixin outlined($isDestructive) {
+  @if $isDestructive {
+    color: var(--red-500);
+    border: 1px solid var(--red-500);
+    background-color: #FFF;
+    box-shadow: var(--drop-shadow-small);
+
+    &:is(:hover) {
+      border-color: var(--red-400);
+    }
+
+    &:is(:active) {
+      color: var(--red-400);
+      border-color: var(--red-400);
+    }
+
+    &:is(:focus) {
+      color: var(--red-500);
+      box-shadow: 0 0 0 3px var(--red-400);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--red-300);
+      border-color: var(--red-300);
+    }
+  } @else {
+    color: var(--primary-500);
+    border: 1px solid var(--primary-500);
+    background-color: #FFF;
+
+    &:is(:hover) {
+      border-color: var(--primary-400);
+      background-color: #FFF;
+    }
+
+    &:is(:active) {
+      color: var(--primary-400);
+      border-color: var(--primary-400);
+      background-color: var(--primary-50);
+    }
+
+    &:is(:focus) {
+      box-shadow: 0 0 0 3px var(--primary-400);
+      background-color: #FFF;
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--primary-300);
+      border-color: var(--primary-300);
+      background-color: #FFF;
+    }
+  }
+}
+.outlined.isNotDestructive {@include outlined(false)}
+.outlined.isDestructive {@include outlined(true)}
+
+@mixin link($isDestructive) {
+  @if $isDestructive {
+    color: var(--red-500);
+    border: 1px solid transparent;
+    background-color: #FFF;
+    box-shadow: none;
+
+    &:is(:hover) {
+      color: var(--red-600);
+    }
+
+    &:is(:active) {
+      color: var(--red-400);
+    }
+
+    &:is(:focus) {
+      color: var(--red-500);
+      border-color: var(--red-500);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--red-300);
+    }
+  } @else {
+    color: var(--primary-500);
+    border: 1px solid transparent;
+    background-color: #FFF;
+    box-shadow: none;
+
+    &:is(:hover) {
+      color: var(--primary-600);
+    }
+
+    &:is(:active) {
+      color: var(--primary-400);
+    }
+
+    &:is(:focus) {
+      color: var(--primary-500);
+      border-color: var(--primary-500);
+      box-shadow: var(--drop-shadow-small);
+    }
+
+    &:is(:disabled) {
+      pointer-events: none;
+      touch-action: none;
+      color: var(--primary-300);
+    }
+  }
+}
+.link.isNotDestructive {@include link(false)}
+.link.isDestructive {@include link(true)}

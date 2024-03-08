@@ -1,0 +1,28 @@
+.container {
+  padding: 0 0 92px 0;
+  margin: 0 auto;
+
+  width: 100%;
+  max-width: 80rem;
+
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  flex-direction: column;
+  gap: 64px;
+
+  transition: padding .4s;
+
+  @media (width <= 1366px) {
+    padding: 0 24px 92px 24px;
+  }
+}
+
+.containerPaddingZero {
+  @extend .container;
+
+  padding: 0;
+}

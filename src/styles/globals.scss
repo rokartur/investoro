@@ -1,0 +1,60 @@
+@import 'variables';
+
+* {
+  box-sizing: border-box;
+  font: inherit;
+
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  min-height: 100vh;
+
+  font-family: system-ui, -apple-system, 'Inter', Roboto, sans-serif;
+  font-style: normal;
+
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+
+  background-color: #FFF;
+
+  animation: fadeOpacityBody .35s ease-in-out;
+}
+
+@keyframes fadeOpacityBody {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+button {
+  all: unset;
+}
+
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+h1, h2, h4, h5, h6, p, a, label {
+  max-width: fit-content;
+}
+
+html, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldset, table, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+.tempDisableScroll {
+  overflow: hidden;
+  -ms-overflow-style: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
