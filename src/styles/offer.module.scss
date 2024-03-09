@@ -197,6 +197,13 @@
     }
   }
 
+  .offerDescription {
+    max-width: 1080px;
+
+    font: 400 18px/24px $font-family;
+    color: #000;
+  }
+
   .offerOtherDetails {
     display: flex;
     justify-content: space-between;

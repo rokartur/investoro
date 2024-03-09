@@ -72,6 +72,12 @@ export const Offer = () => {
 
 			<div className={styles.divider} />
 
+			<p className={styles.offerDescription}>
+				{selectedOffer?.description}
+			</p>
+
+			<div className={styles.divider} />
+
 			<Row isBetween style={{ maxWidth: '1304px' }} className={styles.otherDetailsWrapper}>
 				<div id={'item'} className={styles.offerOtherDetails}>
 					<Column gap={32}>
@@ -186,7 +192,8 @@ export const Offer = () => {
 					<Column gap={41}>
 						<div>
 							<p className={styles.label}>Bedroom/bath</p>
-							<p className={styles.labelSupportingText}>{selectedOffer?.bedrooms} bed. {selectedOffer?.bathrooms} bath</p>
+							<p
+								className={styles.labelSupportingText}>{selectedOffer?.bedrooms} bed. {selectedOffer?.bathrooms} bath</p>
 						</div>
 
 						<div>
