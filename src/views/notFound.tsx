@@ -4,8 +4,8 @@ import { SEO } from '../components/seo.tsx'
 import { Link } from 'react-router-dom'
 
 const metadata = {
-	title: 'Nie znaleziono strony',
-	description: 'Nie odnaleziono strony o podanym adresie',
+	title: 'Page not found',
+	description: '',
 	path: '/404',
 }
 
@@ -18,9 +18,18 @@ export const NotFound = () => {
 
 			<main className={styles.container}>
 				<h1 className={styles.code}>404</h1>
-				<p className={styles.content}>Opps! Nie znaleziono strony</p>
-				<Link className={styles.backButton} to={'/'}>
-					Wróć do strony głównej
+				<Link to={'/'} id={'item'} className={styles.offer404Button}>
+					<div>
+						<span>
+							<p>home page</p>
+						</span>
+					</div>
+
+					<div>
+						<span>
+							<p>home page</p>
+						</span>
+					</div>
 				</Link>
 			</main>
 		</>
