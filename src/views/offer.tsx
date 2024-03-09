@@ -29,7 +29,7 @@ export const Offer = () => {
 				ease: 'back',
 				stagger: .1,
 			})
-	}, { scope: container })
+	}, { scope: container, revertOnUpdate: true })
 
 	return (
 		<section className={styles.offerContainer} ref={container}>
@@ -72,7 +72,7 @@ export const Offer = () => {
 
 			<div className={styles.divider} />
 
-			<Row isBetween style={{ maxWidth: '1304px' }}>
+			<Row isBetween style={{ maxWidth: '1304px' }} className={styles.otherDetailsWrapper}>
 				<div id={'item'} className={styles.offerOtherDetails}>
 					<Column gap={32}>
 						<p className={styles.supportingText}>
@@ -165,7 +165,7 @@ export const Offer = () => {
 					</Column>
 				</div>
 
-				<div style={{ display: 'flex', gap: '112px' }}>
+				<div id={'item'} style={{ display: 'flex', gap: '112px' }} className={styles.offerSpec}>
 					<Column gap={41}>
 						<div>
 							<p className={styles.label}>Property type</p>

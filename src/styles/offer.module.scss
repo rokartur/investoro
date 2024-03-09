@@ -10,6 +10,10 @@
 
   background: var(--neutral-50);
 
+  @media (width <= 1080px) {
+    gap: 64px;
+  }
+
   .offerMainDetails {
     position: relative;
 
@@ -25,12 +29,31 @@
       font: 500 64px/100% $font-family;
       color: #FFF;
       text-align: right;
+
+      @media (width <= 1336px) {
+        max-width: 1080px;
+        width: 100%;
+        position: static;
+        text-align: center;
+        top: unset;
+        right: unset;
+        z-index: unset;
+      }
+
+      @media (width <= 1080px) {
+        font-size: 24px;
+      }
     }
 
     img {
       width: 1080px;
       height: 720px;
       object-fit: cover;
+
+      @media (width <= 1336px) {
+        max-width: 1080px;
+        width: auto;
+      }
     }
 
     .offerContactButton {
@@ -54,6 +77,20 @@
       font: 500 64px/100% $font-family;
       color: #FFF;
 
+      @media (width <= 1336px) {
+        max-width: 1080px;
+        width: 100%;
+        position: absolute;
+        text-align: center;
+        bottom: 0;
+        left: unset;
+        z-index: unset;
+      }
+
+      @media (width <= 1080px) {
+        font-size: 36px;
+      }
+
       div {
         display: flex;
         justify-content: center;
@@ -67,7 +104,7 @@
         transition: .6s cubic-bezier(.16, 1, .3, 1);
 
         &:nth-child(1) {
-          background-color: var(--gray-900);
+          background-color: #000;
 
           p {
             width: 100%;
@@ -108,6 +145,10 @@
       align-items: center;
       gap: 24px;
 
+      @media (width <= 1336px) {
+        display: none;
+      }
+
       span {
         display: flex;
         justify-content: center;
@@ -129,6 +170,10 @@
       font: 500 32px/100% $font-family;
       color: #000;
       text-align: right;
+
+      @media (width <= 1336px) {
+        display: none;
+      }
     }
   }
 
@@ -141,6 +186,15 @@
     opacity: .5;
     transform: rotate(180deg);
     background: linear-gradient(90deg, rgba(61, 61, 61, 0.28) 4.29%, rgba(146, 139, 139, 0.00) 100%);
+
+    @media (width <= 1336px) {
+      max-width: 1080px;
+      width: 100%;
+    }
+
+    @media (width <= 1080px) {
+      display: none;
+    }
   }
 
   .offerOtherDetails {
@@ -177,4 +231,21 @@
   &:first-letter {
     text-transform: uppercase;
   }
+}
+
+.otherDetailsWrapper {
+  padding: 0 20px;
+
+  @media (width <= 1336px) {
+    max-width: 1080px !important;
+    width: 100% !important;
+    justify-content: center !important;
+    flex-direction: column !important;
+    gap: 32px;
+  }
+}
+
+.offerSpec {
+  justify-content: space-between;
+  gap: 0;
 }
