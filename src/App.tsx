@@ -8,6 +8,10 @@ import { Suspense } from 'react'
 import { Header } from './components/header/header.tsx'
 import { Home } from './views/home.tsx'
 import { NotFound } from './views/notFound.tsx'
+import gsap from 'gsap'
+import ScrollTrigger from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 export const App = () => {
 	useScrollToTop()

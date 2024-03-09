@@ -1,0 +1,152 @@
+@import 'variables';
+
+.offersSection {
+  padding: 0 0 112px 0;
+  margin: 64px 112px;
+
+  max-width: 1700px;
+  width: 100%;
+  height: 100%;
+  min-height: 100vh;
+
+  scroll-margin: 64px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 48px;
+
+  h2 {
+    font: 500 64px/100% $font-family;
+    color: var(--neutral-900);
+  }
+
+  .actions {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    gap: 64px;
+  }
+
+  .offersList {
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 48px;
+
+    .offer {
+      width: 388px;
+      height: 498px;
+
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      flex: 1 0 388px;
+
+      background: #FFFFFF;
+      box-shadow: 0 2px 6px 0 rgba(16, 24, 40, 0.06);
+
+      &:is(:hover) {
+        .offerInfo .offerActions .offerButton div {
+          transform: translateY(0px);
+        }
+      }
+
+      img {
+        width: 100%;
+        height: 342px;
+        object-fit: cover;
+      }
+
+      .offerInfo {
+        padding: 20px;
+
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+
+        .offerTitle {
+          font: 500 24px/28px $font-family;
+          color: var(--neutral-900);
+        }
+
+        .offerLocation {
+          display: flex;
+          align-items: center;
+          gap: 8px;
+
+          font: 500 14px/20px $font-family;
+          color: var(--zinc-400);
+        }
+
+        .offerActions {
+          width: 100%;
+
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          .offerPrice {
+            font: 500 24px/32px $font-family;
+            color: var(--neutral-900);
+          }
+
+          .offerButton {
+            max-width: 137px;
+            width: 100%;
+            height: 36px;
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            overflow: hidden;
+            border: 1px solid $light-grey;
+            background-color: transparent;
+
+            transition: .6s cubic-bezier(.16, 1, .3, 1);
+
+            font: 500 14px/16px var(--font-family);
+            color: var(--neutral-900);
+
+            div {
+              width: 100%;
+              height: 36px;
+              transform: translateY(-36px);
+
+              transition: .6s cubic-bezier(.16, 1, .3, 1);
+
+              &:nth-child(1) {
+                background-color: var(--gray-900);
+
+                p {
+                  color: var(--neutral-50)
+                }
+
+                svg path {
+                  stroke: var(--neutral-50);
+                }
+              }
+
+              span {
+                width: max-content;
+                height: 36px;
+                padding: 6px 12px;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

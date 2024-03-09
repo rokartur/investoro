@@ -2,65 +2,65 @@
     {
         "title": "Villa in the mountains",
         "description": "A beautiful villa in the mountains, with a great view",
-        "price": 1000000,
+        "price": "1,000,000",
         "location": "Mountains",
         "type": "home",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Apartment in the city",
         "description": "A beautiful apartment in the city, with a great view",
-        "price": 500000,
+        "price": "500,000",
         "location": "City",
         "type": "apartment",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1580237072617-771c3ecc4a24?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Office in the city",
         "description": "A beautiful office in the city, with a great view",
-        "price": 1000000,
+        "price": "1,000,000",
         "location": "City",
         "type": "office",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Villa in the mountains",
         "description": "A beautiful villa in the mountains, with a great view",
-        "price": 1000000,
+        "price": "1,000,000",
         "location": "Mountains",
         "type": "home",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Apartment in the city",
         "description": "A beautiful apartment in the city, with a great view",
-        "price": 500000,
+        "price": "500,000",
         "location": "City",
         "type": "apartment",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Office in the city",
         "description": "A beautiful office in the city, with a great view",
-        "price": 1000000,
+        "price": "1,000,000",
         "location": "City",
         "type": "office",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Villa in the mountains",
         "description": "A beautiful villa in the mountains, with a great view",
-        "price": 1000000,
+        "price": "1,000,000",
         "location": "Mountains",
         "type": "home",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
     {
         "title": "Apartment in the city",
         "description": "A beautiful apartment in the city, with a great view",
-        "price": 500000,
+        "price": "500,000",
         "location": "City",
         "type": "apartment",
-        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+        "image": "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     }
 ]
