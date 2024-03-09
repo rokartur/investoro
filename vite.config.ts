@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react'
 import scss from 'rollup-plugin-scss'
-import { defineConfig, splitVendorChunkPlugin, loadEnv } from 'vite'
+import { defineConfig, splitVendorChunkPlugin } from 'vite'
 import svgr from 'vite-plugin-svgr'
 
 export default defineConfig(({ mode }) => {
@@ -25,11 +25,6 @@ export default defineConfig(({ mode }) => {
 		},
 		resolve: {
 			extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
-		},
-		css: {
-			modules: {
-				generateScopedName: '[hash:base64:12]',
-			},
 		},
 		json: {
 			namedExports: false,

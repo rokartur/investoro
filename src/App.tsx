@@ -4,11 +4,10 @@ import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { store } from './utils/store.ts'
-import { lazy, Suspense } from 'react'
+import { Suspense } from 'react'
 import { Header } from './components/header/header.tsx'
-
-const Home = lazy(() => import('./views/home.tsx'))
-const NotFound = lazy(() => import('./views/notFound.tsx'))
+import { Home } from './views/home.tsx'
+import { NotFound } from './views/notFound.tsx'
 
 export const App = () => {
 	useScrollToTop()
@@ -18,7 +17,7 @@ export const App = () => {
 			<HelmetProvider>
 				<Suspense fallback={<p>loading...</p>}>
 					<BrowserRouter>
-						<Header/>
+						<Header />
 
 						<Routes>
 							<Route path={'/'} element={<Home />} />

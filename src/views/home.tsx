@@ -9,7 +9,7 @@ const metadata = {
 	path: '',
 }
 
-const Home = () => {
+export const Home = () => {
 	useScrollToTop()
 
 	return (
@@ -22,5 +22,3 @@ const Home = () => {
 		</>
 	)
 }
-
-export default Home

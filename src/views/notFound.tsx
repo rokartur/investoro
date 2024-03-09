@@ -9,7 +9,7 @@ const metadata = {
 	path: '/404',
 }
 
-const NotFound = () => {
+export const NotFound = () => {
 	useScrollToTop()
 
 	return (
@@ -26,5 +26,3 @@ const NotFound = () => {
 		</>
 	)
 }
-
-export default NotFound
