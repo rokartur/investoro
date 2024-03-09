@@ -1,66 +1,106 @@
 [
-    {
-        "title": "Villa in the mountains",
-        "description": "A beautiful villa in the mountains, with a great view",
-        "price": "1,000,000",
-        "location": "Mountains",
-        "type": "home",
-        "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Apartment in the city",
-        "description": "A beautiful apartment in the city, with a great view",
-        "price": "500,000",
-        "location": "City",
-        "type": "apartment",
-        "image": "https://images.unsplash.com/photo-1580237072617-771c3ecc4a24?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Office in the city",
-        "description": "A beautiful office in the city, with a great view",
-        "price": "1,000,000",
-        "location": "City",
-        "type": "office",
-        "image": "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Villa in the mountains",
-        "description": "A beautiful villa in the mountains, with a great view",
-        "price": "1,000,000",
-        "location": "Mountains",
-        "type": "home",
-        "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Apartment in the city",
-        "description": "A beautiful apartment in the city, with a great view",
-        "price": "500,000",
-        "location": "City",
-        "type": "apartment",
-        "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Office in the city",
-        "description": "A beautiful office in the city, with a great view",
-        "price": "1,000,000",
-        "location": "City",
-        "type": "office",
-        "image": "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Villa in the mountains",
-        "description": "A beautiful villa in the mountains, with a great view",
-        "price": "1,000,000",
-        "location": "Mountains",
-        "type": "home",
-        "image": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    },
-    {
-        "title": "Apartment in the city",
-        "description": "A beautiful apartment in the city, with a great view",
-        "price": "500,000",
-        "location": "City",
-        "type": "apartment",
-        "image": "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-    }
+  {
+    "title": "Villa in the mountains",
+    "description": "Modern apartment in the heart of the city. Open floor plan with panoramic windows provides an impressive view. Equipped with a smart home control system and high-end furniture. Ideal for those who appreciate comfort and prestige.",
+    "price": "1,000,000",
+    "location": "Mountains, Poland",
+    "type": "home",
+    "image": "https://images.unsplash.com/photo-1600585152220-90363fe7e115?q=80&w=2340&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "300",
+    "bathrooms": 4,
+    "bedrooms": 3,
+    "year_built": "2018",
+    "condition": "Excellent"
+  },
+  {
+    "title": "Industrial Chic Loft",
+    "description": "Apartment in a historic building, arranged in an industrial style. Large open spaces, brick walls and original ceiling beams give it a unique character. Ideal for lovers of art and design.",
+    "price": "500,000",
+    "location": "Warsaw, Poland",
+    "type": "apartment",
+    "image": "https://images.unsplash.com/photo-1580237072617-771c3ecc4a24?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "180",
+    "bathrooms": 2,
+    "bedrooms": 1,
+    "year_built": "1920 (renovated in 2015)",
+    "condition": "Very good"
+  },
+  {
+    "title": "Spacious Home for Family",
+    "description": "Comfortable apartment with spacious living room, bedroom, children's room and two bathrooms. Equipped with modern furniture and household appliances. Ideal for a family with children.",
+    "price": "1,000,000",
+    "location": "Cracow, Poland",
+    "type": "office",
+    "image": "https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "150",
+    "bathrooms": 2,
+    "bedrooms": 3,
+    "year_built": "2005",
+    "condition": "Good"
+  },
+  {
+    "title": "Modern Bachelor Pad",
+    "description": "The apartment is ideal for one person. Practically laid out and stylishly decorated. Equipped with a balcony and a kitchenette. Ideal for people who value independence and comfort.",
+    "price": "1,000,000",
+    "location": "Wrocław, Poland",
+    "type": "home",
+    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "80",
+    "bathrooms": 1,
+    "bedrooms": 1,
+    "year_built": "2017",
+    "condition": "Very good"
+  },
+  {
+    "title": "Private Rooftop Oasis",
+    "description": "Luxury apartment on the top floor of a modern high-rise building. It has a spacious living room with fireplace, private terrace with Jacuzzi and panoramic views of the city. Ideal for those who appreciate luxury and privacy.",
+    "price": "500,000",
+    "location": "Poznań, Poland",
+    "type": "apartment",
+    "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "200",
+    "bathrooms": 2,
+    "bedrooms": 2,
+    "year_built": "2010",
+    "condition": "Excellent"
+  },
+  {
+    "title": "City Center Rental Gem",
+    "description": "Comfortable first floor apartment with private garden. Ideal for people who appreciate peace and quiet and proximity to nature.",
+    "price": "1,000,000",
+    "location": "Warsaw, Poland",
+    "type": "office",
+    "image": "https://images.unsplash.com/photo-1600566753151-384129cf4e3e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "120",
+    "bathrooms": 1,
+    "bedrooms": 2,
+    "year_built": "1995",
+    "condition": "Good"
+  },
+  {
+    "title": "Modern Rental Apartment",
+    "description": "Apartment fully furnished and equipped, ready to move in. Ideal for those looking for a comfortable place to live for a short or long period of time.",
+    "price": "1,000,000",
+    "location": "Gdynia, Poland",
+    "type": "home",
+    "image": "https://images.unsplash.com/photo-1503174971373-b1f69850bded?q=80&w=2113&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "100",
+    "bathrooms": 1,
+    "bedrooms": 2,
+    "year_built": "2019",
+    "condition": "Very good"
+  },
+  {
+    "title": "City Center Rental Gem",
+    "description": "Apartment near the city center, ideal for rent. Attractive price and high investment potential.",
+    "price": "500,000",
+    "location": "City",
+    "type": "apartment",
+    "image": "https://images.unsplash.com/photo-1613553507747-5f8d62ad5904?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "meters": "130",
+    "bathrooms": 2,
+    "bedrooms": 3,
+    "year_built": "2008",
+    "condition": "Very good"
+  }
 ]

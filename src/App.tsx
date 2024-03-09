@@ -7,6 +7,7 @@ import { store } from './utils/store.ts'
 import { Suspense } from 'react'
 import { Header } from './components/header/header.tsx'
 import { Home } from './views/home.tsx'
+import { Offer } from './views/offer.tsx'
 import { NotFound } from './views/notFound.tsx'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
@@ -26,7 +27,7 @@ export const App = () => {
 						<Routes>
 							<Route path={'/'} element={<Home />} />
 							<Route path={'/offer'}>
-								<Route index path={':id'} element={'offer'} />
+								<Route index path={':id'} element={<Offer />} />
 							</Route>
 							<Route path={'*'} element={<NotFound />} />
 						</Routes>

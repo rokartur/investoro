@@ -2,7 +2,7 @@ import { useScrollToTop } from '../hooks/useScrollToTop.ts'
 import { Wrapper } from '../components/wrapper/wrapper.tsx'
 import { SEO } from '../components/seo.tsx'
 import { Hero } from '../components/hero/hero.tsx'
-import { Offers } from '../components/offers/offers.tsx'
+import { Offers } from './offers.tsx'
 import { Column } from '../components/column/column.tsx'
 
 const metadata = {

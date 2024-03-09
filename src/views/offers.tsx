@@ -1,9 +1,9 @@
-import styles from '../../styles/offers.module.scss'
-import { Select } from '../select/select.tsx'
+import styles from '../styles/offers.module.scss'
+import { Select } from '../components/select/select.tsx'
 import { useRef, useState } from 'react'
-import offers from '../../assets/data.json'
+import offers from '../assets/data.json'
 import { Link } from 'react-router-dom'
-import { Column } from '../column/column.tsx'
+import { Column } from '../components/column/column.tsx'
 
 export const Offers = () => {
 	const [selectedType, setSelectedType] = useState('all')
@@ -148,7 +148,7 @@ export const Offers = () => {
 
 			<div className={styles.offersList}>
 				{offers.map(({ image, title, location, price }, index) => (
-					<Link key={index} className={styles.offer} to={`/offer/${index}`}>
+					<Link key={index} className={styles.offer} to={`/offer/${title.toLowerCase().replaceAll(" ", "-")}`}>
 						<img src={image} alt={title} />
 						<div className={styles.offerInfo}>
 							<Column gap={8}>
