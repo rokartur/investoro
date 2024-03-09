@@ -1,0 +1,88 @@
+@import '../../styles/variables.scss';
+
+.heroContainer {
+  height: calc(100vh - 120px);
+  background-color: var(--neutral-50);
+
+  display: flex;
+  justify-content: center;
+
+  .heroContent {
+    padding: 112px 112px;
+    position: relative;
+
+    width: 100%;
+    height: max-content;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .heroHeading {
+      position: absolute;
+      z-index: 2;
+
+      font: 900 128px/100% $font-family;
+      color: white;
+      mix-blend-mode: difference;
+      user-select: none;
+    }
+
+    .heroImage {
+      position: relative;
+      z-index: 0;
+      object-fit: cover;
+      pointer-events: none;
+    }
+  }
+}
+
+.mouseScrollDown {
+  position: absolute;
+  bottom: -112px;
+
+  font-size: 0.9em;
+  border: 2px solid rgba(0, 0, 0, 1);
+  display: block;
+  width: 1.7em;
+  height: 2.8em;
+  border-radius: 0.9em;
+  margin: 0 auto;
+  text-decoration: none;
+  transition: border 0.2s ease-out;
+  cursor: pointer;
+
+  span {
+    display: block;
+    background: #000;
+    width: 0.2em;
+    height: 0.3em;
+    margin: 0.7em auto 0;
+    border-radius: 0.4em;
+
+    animation: scroll 1.5s cubic-bezier(0.65, -0.55, 0.25, 1.5) infinite;
+    will-change: transform;
+  }
+
+  &:is(:hover) {
+    border: 2px solid rgba(0, 0, 0, 0.7);
+
+    span {
+      -webkit-animation-duration: 0.7s;
+      animation-duration: 0.7s;
+    }
+  }
+}
+
+@keyframes scroll {
+  0%, 20% {
+    transform: translateY(0) scaleY(1);
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1.2em) scaleY(1.5);
+    opacity: 0.01;
+  }
+}

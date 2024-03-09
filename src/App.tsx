@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
 import { store } from './utils/store.ts'
 import { lazy, Suspense } from 'react'
+import { Header } from './components/header/header.tsx'
 
 const Home = lazy(() => import('./views/home.tsx'))
 const NotFound = lazy(() => import('./views/notFound.tsx'))
@@ -17,6 +18,8 @@ export const App = () => {
 			<HelmetProvider>
 				<Suspense fallback={<p>loading...</p>}>
 					<BrowserRouter>
+						<Header/>
+
 						<Routes>
 							<Route path={'/'} element={<Home />} />
 							{/*<Route path={'/books'} element={'BookLayout this must include <Outlet/>'}>*/}
