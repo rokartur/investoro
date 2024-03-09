@@ -21,11 +21,9 @@ export const App = () => {
 
 						<Routes>
 							<Route path={'/'} element={<Home />} />
-							{/*<Route path={'/books'} element={'BookLayout this must include <Outlet/>'}>*/}
-							{/*	<Route index element={'BooksList'} />*/}
-							{/*	<Route path={':id'} element={'Book'} />*/}
-							{/*	<Route path={'new'} element={'NewBook'} />*/}
-							{/*</Route>*/}
+							<Route path={'/offer'}>
+								<Route index path={':id'} element={'offer'} />
+							</Route>
 							<Route path={'*'} element={<NotFound />} />
 						</Routes>
 					</BrowserRouter>

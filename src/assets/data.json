@@ -1,0 +1,66 @@
+[
+    {
+        "title": "Villa in the mountains",
+        "description": "A beautiful villa in the mountains, with a great view",
+        "price": 1000000,
+        "location": "Mountains",
+        "type": "home",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Apartment in the city",
+        "description": "A beautiful apartment in the city, with a great view",
+        "price": 500000,
+        "location": "City",
+        "type": "apartment",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Office in the city",
+        "description": "A beautiful office in the city, with a great view",
+        "price": 1000000,
+        "location": "City",
+        "type": "office",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Villa in the mountains",
+        "description": "A beautiful villa in the mountains, with a great view",
+        "price": 1000000,
+        "location": "Mountains",
+        "type": "home",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Apartment in the city",
+        "description": "A beautiful apartment in the city, with a great view",
+        "price": 500000,
+        "location": "City",
+        "type": "apartment",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Office in the city",
+        "description": "A beautiful office in the city, with a great view",
+        "price": 1000000,
+        "location": "City",
+        "type": "office",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Villa in the mountains",
+        "description": "A beautiful villa in the mountains, with a great view",
+        "price": 1000000,
+        "location": "Mountains",
+        "type": "home",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    },
+    {
+        "title": "Apartment in the city",
+        "description": "A beautiful apartment in the city, with a great view",
+        "price": 500000,
+        "location": "City",
+        "type": "apartment",
+        "image": "https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
+    }
+]
