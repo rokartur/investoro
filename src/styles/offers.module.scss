@@ -18,7 +18,7 @@
 
   h2 {
     font: 500 64px/100% $font-family;
-    color: var(--neutral-900);
+    color: #000;
   }
 
   .actions {
@@ -78,7 +78,7 @@
 
         .offerTitle {
           font: 500 24px/28px $font-family;
-          color: var(--neutral-900);
+          color: #000;
         }
 
         .offerLocation {
@@ -103,7 +103,7 @@
 
           .offerPrice {
             font: 500 24px/32px $font-family;
-            color: var(--neutral-900);
+            color: #000;
           }
 
           .offerButton {
@@ -122,7 +122,7 @@
             transition: .6s cubic-bezier(.16, 1, .3, 1);
 
             font: 500 14px/16px var(--font-family);
-            color: var(--neutral-900);
+            color: #000;
 
             div {
               width: 100%;
