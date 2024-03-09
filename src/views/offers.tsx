@@ -7,46 +7,32 @@ import { Column } from '../components/column/column.tsx'
 
 export const Offers = () => {
 	const [selectedType, setSelectedType] = useState('all')
-	// const [selectedMinPrice, setSelectedMinPrice] = useState('0')
-	// const [selectedMaxPrice, setSelectedMaxPrice] = useState('0')
+	const [selectedMinPrice, setSelectedMinPrice] = useState('')
+	const [selectedMaxPrice, setSelectedMaxPrice] = useState('')
 	const [selectedSorting, setSelectedSorting] = useState('recentlyAdded')
 
 	const container = useRef(null)
-
-	// useGSAP(() => {
-	// 	gsap.from('#offer', {
-	// 		opacity: 0, stagger: .1, scale: .8, ease: 'back', scrollTrigger: {
-	// 			trigger: '#offer',
-	// 			start: 'top 70%',
-	// 			end: 'bottom 40%',
-	// 		},
-	// 	})
-	// }, { scope: container })
 
 	const types = [
 		{
 			id: 'all',
 			name: 'All',
 			value: 'all',
-			icon: '',
 		},
 		{
 			id: 'house',
 			name: 'House',
 			value: 'house',
-			icon: '',
 		},
 		{
 			id: 'apartment',
 			name: 'Apartment',
 			value: 'apartment',
-			icon: '',
 		},
 		{
 			id: 'office',
 			name: 'Office',
 			value: 'office',
-			icon: '',
 		},
 	]
 
@@ -101,32 +87,36 @@ export const Offers = () => {
 					}
 				/>
 
-				{/* TODO create custom price selector */}
-				<Select
-					placeholder={'Price'}
-					selectedOption={'0'}
-					options={[
-						{
-							id: '1',
-							name: 'Category',
-							value: 'Category',
-						},
-					]}
-					onClick={() => {
-					}}
-					icon={
-						<svg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 24' fill='none'>
-							<path
-								d='M9.33856 14.3298C9.33856 15.6198 10.3286 16.6598 11.5586 16.6598H14.0686C15.1386 16.6598 16.0086 15.7498 16.0086 14.6298C16.0086 13.4098 15.4786 12.9798 14.6886 12.6998L10.6586 11.2998C9.86856 11.0198 9.33856 10.5898 9.33856 9.36984C9.33856 8.24984 10.2086 7.33984 11.2786 7.33984H13.7886C15.0186 7.33984 16.0086 8.37984 16.0086 9.66984'
-								stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-							<path d='M12.6667 6V18' stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round'
-										strokeLinejoin='round' />
-							<path
-								d='M15.6667 22H9.66669C4.66669 22 2.66669 20 2.66669 15V9C2.66669 4 4.66669 2 9.66669 2H15.6667C20.6667 2 22.6667 4 22.6667 9V15C22.6667 20 20.6667 22 15.6667 22Z'
-								stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-						</svg>
-					}
-				/>
+				<label className={styles.price}>
+					<div>
+						<span>
+							<svg xmlns='http://www.w3.org/2000/svg' width='25' height='24' viewBox='0 0 25 24' fill='none'>
+								<path
+									d='M9.33856 14.3298C9.33856 15.6198 10.3286 16.6598 11.5586 16.6598H14.0686C15.1386 16.6598 16.0086 15.7498 16.0086 14.6298C16.0086 13.4098 15.4786 12.9798 14.6886 12.6998L10.6586 11.2998C9.86856 11.0198 9.33856 10.5898 9.33856 9.36984C9.33856 8.24984 10.2086 7.33984 11.2786 7.33984H13.7886C15.0186 7.33984 16.0086 8.37984 16.0086 9.66984'
+									stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+								<path d='M12.6667 6V18' stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+								<path
+									d='M15.6667 22H9.66669C4.66669 22 2.66669 20 2.66669 15V9C2.66669 4 4.66669 2 9.66669 2H15.6667C20.6667 2 22.6667 4 22.6667 9V15C22.6667 20 20.6667 22 15.6667 22Z'
+									stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+							</svg>
+						</span>
+						<p>Price</p>
+					</div>
+					<input
+						type={'text'}
+						placeholder={'min'}
+						value={selectedMinPrice}
+						onChange={(event) => setSelectedMinPrice(event.target.value)}
+						step={1000}
+					/>
+					<input
+						type={'text'}
+						placeholder={'max'}
+						value={selectedMaxPrice}
+						onChange={(event) => setSelectedMaxPrice(event.target.value)}
+						step={1000}
+					/>
+				</label>
 
 				<Select
 					placeholder={'Sorting'}
@@ -147,13 +137,90 @@ export const Offers = () => {
 			</div>
 
 			<div className={styles.offersList}>
-				{offers.map(({ image, title, location, price }, index) => (
-					<Link key={index} className={styles.offer} to={`/offer/${title.toLowerCase().replaceAll(" ", "-")}`}>
-						<img src={image} alt={title} />
-						<div className={styles.offerInfo}>
-							<Column gap={8}>
-								<p className={styles.offerTitle}>{title}</p>
-								<p className={styles.offerLocation}>
+				{offers
+					.filter(offer => {
+						const offerPrice = Number(offer.price.split(',').join(''))
+						const minPrice = Number(selectedMinPrice)
+						const maxPrice = selectedMaxPrice === '' ? 0 : Number(selectedMaxPrice)
+						return (selectedType === 'all' || offer.type === selectedType) &&
+							(maxPrice === 0 ? offerPrice >= minPrice : (offerPrice >= minPrice && offerPrice <= maxPrice))
+					})
+					.sort((a: { id: number; price: string; }, b: { id: number; price: string; }) => {
+						if (selectedSorting === 'recentlyAdded') {
+							return a.id - b.id
+						} else if (selectedSorting === 'priceAscending') {
+							return Number(a.price.split(',').join('')) - Number(b.price.split(',').join(''))
+						} else if (selectedSorting === 'priceDescending') {
+							return Number(b.price.split(',').join('')) - Number(a.price.split(',').join(''))
+						}
+					})
+					.map(({ image, title, location, price, type }, index) => (
+						<Link key={index} className={styles.offer} to={`/offer/${title.toLowerCase().replaceAll(' ', '-')}`}>
+							<img src={image} alt={title} />
+							<div className={styles.offerBadge}>
+								<span>
+									{type === 'house' ?
+										<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
+											<path
+												d='M7.51666 2.36664L3.02499 5.86664C2.27499 6.44997 1.66666 7.69164 1.66666 8.63331V14.8083C1.66666 16.7416 3.24166 18.325 5.17499 18.325H14.825C16.7583 18.325 18.3333 16.7416 18.3333 14.8166V8.74997C18.3333 7.74164 17.6583 6.44997 16.8333 5.87497L11.6833 2.26664C10.5167 1.44997 8.64166 1.49164 7.51666 2.36664Z'
+												stroke='#4B5563' strokeWidth='1.25' strokeLinecap='round' strokeLinejoin='round' />
+											<path d='M10 14.9916V12.4916' stroke='#4B5563' strokeWidth='1.25' strokeLinecap='round'
+														strokeLinejoin='round' />
+										</svg> : type === 'apartment' ?
+											<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
+												<path d='M1 22H23' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+															strokeLinecap='round' strokeLinejoin='round' />
+												<path d='M19.78 22.01V17.55' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+															strokeLinecap='round' strokeLinejoin='round' />
+												<path
+													d='M19.8001 10.89C18.5801 10.89 17.6001 11.87 17.6001 13.09V15.36C17.6001 16.58 18.5801 17.56 19.8001 17.56C21.0201 17.56 22.0001 16.58 22.0001 15.36V13.09C22.0001 11.87 21.0201 10.89 19.8001 10.89Z'
+													stroke='white' strokeWidth='1.5' strokeMiterlimit='10' strokeLinecap='round'
+													strokeLinejoin='round' />
+												<path
+													d='M2.1001 22V6.03003C2.1001 4.02003 3.10015 3.01001 5.09015 3.01001H11.3201C13.3101 3.01001 14.3001 4.02003 14.3001 6.03003V22'
+													stroke='white' strokeWidth='1.5' strokeMiterlimit='10' strokeLinecap='round'
+													strokeLinejoin='round' />
+												<path d='M5.80005 8.25H10.7501' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+															strokeLinecap='round' strokeLinejoin='round' />
+												<path d='M5.80005 12H10.7501' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+															strokeLinecap='round' strokeLinejoin='round' />
+												<path d='M8.25 22V18.25' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+															strokeLinecap='round' strokeLinejoin='round' />
+											</svg> : type === 'office' ?
+												<svg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'>
+													<path d='M2 22H22' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M17 2H7C4 2 3 3.79 3 6V22H21V6C21 3.79 20 2 17 2Z' stroke='white' strokeWidth='1.5'
+																strokeMiterlimit='10' strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M7 16.5H10' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M14 16.5H17' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M7 12H10' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M14 12H17' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M7 7.5H10' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M14 7.5H17' stroke='white' strokeWidth='1.5' strokeMiterlimit='10'
+																strokeLinecap='round' strokeLinejoin='round' />
+												</svg> :
+												<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
+													<path
+														d='M7.51666 2.36664L3.02499 5.86664C2.27499 6.44997 1.66666 7.69164 1.66666 8.63331V14.8083C1.66666 16.7416 3.24166 18.325 5.17499 18.325H14.825C16.7583 18.325 18.3333 16.7416 18.3333 14.8166V8.74997C18.3333 7.74164 17.6583 6.44997 16.8333 5.87497L11.6833 2.26664C10.5167 1.44997 8.64166 1.49164 7.51666 2.36664Z'
+														stroke='#4B5563' strokeWidth='1.25' strokeLinecap='round' strokeLinejoin='round' />
+													<path d='M10 14.9916V12.4916' stroke='#4B5563' strokeWidth='1.25' strokeLinecap='round'
+																strokeLinejoin='round' />
+												</svg>}
+								</span>
+								<p>
+									{type}
+								</p>
+							</div>
+							<div className={styles.offerInfo}>
+								<Column gap={8}>
+									<p className={styles.offerTitle}>{title}</p>
+									<p className={styles.offerLocation}>
 									<span>
 										<svg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20' fill='none'>
 											<path
@@ -164,13 +231,13 @@ export const Offers = () => {
 												stroke='#A1A1AA' strokeWidth='1.25' />
 										</svg>
 									</span>
-									{location}
-								</p>
-							</Column>
-							<div className={styles.offerActions}>
-								<p className={styles.offerPrice}>{price} PLN</p>
-								<div className={styles.offerButton}>
-									<div>
+										{location}
+									</p>
+								</Column>
+								<div className={styles.offerActions}>
+									<p className={styles.offerPrice}>{price} PLN</p>
+									<div className={styles.offerButton}>
+										<div>
 										<span>
 											<p>Learn more</p>
 											<span>
@@ -179,9 +246,9 @@ export const Offers = () => {
 												</svg>
 											</span>
 										</span>
-									</div>
+										</div>
 
-									<div>
+										<div>
 										<span>
 											<p>Learn more</p>
 											<span>
@@ -190,12 +257,12 @@ export const Offers = () => {
 												</svg>
 											</span>
 										</span>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
-					</Link>
-				))}
+						</Link>
+					))}
 			</div>
 		</section>
 	)

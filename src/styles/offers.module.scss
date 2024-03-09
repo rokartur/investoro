@@ -47,6 +47,8 @@
       width: 388px;
       height: 498px;
 
+      position: relative;
+
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -58,6 +60,45 @@
       &:is(:hover) {
         .offerInfo .offerActions .offerButton div {
           transform: translateY(0px);
+        }
+      }
+
+      .offerBadge {
+        padding: 4px 12px;
+
+        position: absolute;
+
+        top: 20px;
+        left: 20px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+
+        border-radius: 24px;
+        background: var(--neutral-50);
+
+        span {
+          width: 20px;
+          height: 20px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          svg path {
+            stroke: var(--neutral-600);
+          }
+        }
+
+        p {
+          font: 500 14px/100% $font-family;
+          color: var(--neutral-600);
+
+          &:first-letter {
+            text-transform: uppercase;
+          }
         }
       }
 
@@ -157,5 +198,71 @@
         }
       }
     }
+  }
+}
+
+.price {
+  width: 100%;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  div {
+    padding: 12px;
+
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 8px;
+
+    font: 400 14px/20px $font-family;
+    color: var(--neutral-600);
+
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+    border-left: 1px solid $light-grey;
+    background: var(--neutral-50);
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      line-height: 20px;
+      color: var(--neutral-700);
+    }
+  }
+
+  input[type=text] {
+    padding: 12px;
+
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    border: 1px solid $light-grey;
+    background: #FFF;
+
+    font: 400 14px/20px $font-family;
+    color: var(--neutral-600);
+
+    &:is(:focus) {
+      outline: none;
+    }
+  }
+
+  input[type=text]:nth-child(3) {
+    border-top: 1px solid $light-grey;
+    border-bottom: 1px solid $light-grey;
+    border-left: 1px solid transparent;
+    border-right: 1px solid $light-grey;
   }
 }

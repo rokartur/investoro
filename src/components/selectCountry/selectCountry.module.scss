@@ -1,0 +1,172 @@
+@import '../../styles/variables.scss';
+
+.selectWrapper {
+  min-width: fit-content;
+
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  gap: 24px;
+
+  .selectContainer {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    position: relative;
+
+    .selectContent {
+      padding: 8px 12px;
+      min-width: 256px;
+
+      position: relative;
+      order: 0;
+
+      background-color: #FFFFFF;
+      border: 1px solid var(--neutral-200);
+      cursor: pointer;
+
+      font: 500 14px/20px $font-family;
+      color: var(--neutral-500);
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      transition: border .2s, box-shadow .2s, background-color .2s;
+
+      &:is(:hover) {
+        background-color: var(--neutral-50);
+        border: 1px solid var(--neutral-300);
+      }
+
+      .selectPlaceholder {
+        display: flex;
+        justify-content: left;
+        flex-direction: row !important;
+        align-items: center;
+        gap: 8px;
+
+        span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        p {
+          font: 500 14px/20px $font-family;
+          color: #000;
+        }
+      }
+
+      span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        transition: transform .4s;
+      }
+    }
+
+    .selectContentFocus {
+      @extend .selectContent;
+
+      border: 1px solid var(--neutral-100);
+
+      &:is(:hover) {
+        background-color: #FFFFFF;
+        border: 1px solid var(--neutral-50);
+      }
+    }
+
+    .selectOptions {
+      padding: 8px;
+
+      max-height: 0;
+      width: 375px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      opacity: 0;
+      background-color: #FFFFFF;
+      pointer-events: none;
+      border: 1px solid var(--neutral-100);
+
+      z-index: 5;
+      overflow: hidden;
+      position: absolute;
+      top: 53px;
+      right: -15px;
+
+      transform: scale(.5);
+      transform-origin: 90% top;
+
+      transition: opacity .2s, transform .2s;
+
+      .selectOption {
+        padding: 8px 12px;
+
+        min-width: 100%;
+        height: 36px;
+
+        cursor: pointer;
+
+        display: flex;
+        justify-content: left;
+        align-items: center;
+        gap: 8px;
+
+        font: 500 14px/20px $font-family;
+        color: var(--neutral-700);
+
+        transition: background-color .2s, color .2s, transform .2s;
+
+        span {
+          width: 20px;
+          height: 20px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        &:is(:hover) {
+          background-color: #ECEEF0;
+        }
+
+        &:is(:active) {
+          background-color: #ECEEF0;
+        }
+
+        .selectContentRadio {
+          display: none;
+        }
+      }
+
+      .selectOptionActive {
+        @extend .selectOption;
+
+        color: #000;
+        background-color: var(--neutral-100);
+
+        &:is(:hover) {
+          color: #000;
+          background-color: var(--neutral-100);
+        }
+      }
+    }
+
+    .selectOptionsActive {
+      @extend .selectOptions;
+
+      max-height: 300px;
+      opacity: 1;
+      overflow-y: scroll;
+      transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+  }
+}
