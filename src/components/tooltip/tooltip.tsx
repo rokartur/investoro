@@ -1,9 +1,9 @@
 import styles from './tooltip.module.scss'
-import { ComponentChildren } from 'preact'
+import { ReactNode } from 'react'
 
 type TooltipTypes = {
 	title: string
-	children: ComponentChildren
+	children: ReactNode
 	place?: 'bottom' | 'left'
 }
 

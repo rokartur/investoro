@@ -1,10 +1,10 @@
 import styles from './wrapper.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type WrapperTypes = {
-	children: ComponentChildren
+	children: ReactNode
 	className?: string
-	style?: any
+	style?: CSSProperties
 }
 
 export const Wrapper = ({ children, className, style }: WrapperTypes) => (

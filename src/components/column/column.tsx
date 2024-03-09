@@ -1,12 +1,12 @@
 import styles from './column.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type ColumnTypes = {
-	children: ComponentChildren
+	children: ReactNode
 	gap?: number
 	isReverse?: boolean
 	className?: string
-	style?: any
+	style?: CSSProperties
 }
 
 export const Column = ({ children, gap, isReverse = false, className, style }: ColumnTypes) => (

@@ -1,5 +1,5 @@
 import styles from './paragraph.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type Size = 'overline-small' | 'overline-large' | 'xsmall' | 'small' | 'medium' | 'large'
 type Weight = 'regular-weight' | 'medium-weight' | 'semibold-weight'
@@ -10,8 +10,8 @@ type ParagraphTypes = {
 	size: Size
 	weight: Weight
 	transform?: Transform
-	children?: ComponentChildren
-	style?: any
+	children?: ReactNode
+	style?: CSSProperties
 }
 
 export const Paragraph = ({ className, size, weight, transform, children, style }: ParagraphTypes) => (

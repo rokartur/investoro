@@ -1,5 +1,5 @@
 import styles from './display.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type Weight = 'medium' | 'semibold' | 'bold' | 'extrabold'
 type Size = 'small' | 'large'
@@ -8,8 +8,8 @@ type DisplayTypes = {
 	className?: string
 	weight: Weight
 	size: Size
-	children?: ComponentChildren
-	style?: any
+	children?: ReactNode
+	style?: CSSProperties
 }
 
 export const Display = ({ className, weight, size, children, style }: DisplayTypes) => (

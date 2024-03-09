@@ -5,7 +5,6 @@
     "module": "ESNext",
     "esModuleInterop": true,
     "lib": ["ESNext", "DOM", "DOM.Iterable"],
-    "types": ["node", "vite-plugin-svgr/client"],
     "skipLibCheck": true,
     "allowJs": true,
     "checkJs": true,

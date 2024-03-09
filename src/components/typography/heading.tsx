@@ -1,5 +1,5 @@
 import styles from './heading.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type Weight = 'medium' | 'semibold' | 'bold' | 'extrabold'
 
@@ -7,8 +7,8 @@ type HeadingTypes = {
 	className?: string
 	h: number
 	weight: Weight
-	children?: ComponentChildren
-	style?: any
+	children?: ReactNode
+	style?: CSSProperties
 }
 
 export const Heading = ({ className, h, weight, children, style }: HeadingTypes) => (

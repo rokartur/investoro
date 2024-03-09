@@ -1,12 +1,12 @@
 import styles from './overlay.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type OverlayTypes = {
-	children: ComponentChildren
+	children: ReactNode
 	paddingZero?: boolean
 	sidePadding?: boolean
 	bottomPadding?: boolean
-	style?: any
+	style?: CSSProperties
 }
 
 export const Overlay = ({ children, paddingZero = false, sidePadding, bottomPadding, style }: OverlayTypes) => (

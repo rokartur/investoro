@@ -1,13 +1,13 @@
 import styles from './row.module.scss'
-import { ComponentChildren } from 'preact'
+import { CSSProperties, ReactNode } from 'react'
 
 type RowTypes = {
-	children: ComponentChildren
+	children: ReactNode
 	gap?: number
 	isReverse?: boolean
 	isBetween?: boolean
 	className?: string
-	style?: any
+	style?: CSSProperties
 }
 
 export const Row = ({ children, gap, isReverse = false, isBetween = false, className, style }: RowTypes) => (
