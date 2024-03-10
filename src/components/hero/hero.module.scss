@@ -23,6 +23,10 @@
       font: 900 128px/100% var(--font-family);
       color: white;
       mix-blend-mode: difference;
+
+      @media (width <= 900px) {
+        font-size: 64px;
+      }
     }
 
     .heroImage {
@@ -30,6 +34,11 @@
       z-index: 0;
       object-fit: cover;
       pointer-events: none;
+
+      @media (width <= 900px) {
+        width: 448px;
+        height: auto;
+      }
     }
   }
 }
