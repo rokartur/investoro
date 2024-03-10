@@ -14,8 +14,6 @@ export const Offer = () => {
 	const container = useRef(null)
 	const { id } = useParams()
 	const selectedOffer = offers.find(item => item.title.toLowerCase().replaceAll(' ', '-') === id)
-	console.log(0, id)
-	console.log(1, selectedOffer?.title.toLowerCase().replaceAll(' ', '-'))
 
 	useGSAP(() => {
 		gsap.fromTo(
