@@ -255,3 +255,17 @@
   justify-content: space-between;
   gap: 0;
 }
+
+.offerPrice {
+  margin: 32px 0 0 0;
+  padding: 10px;
+  background: #000;
+
+  font: 500 64px/100% var(--font-family);
+  color: #FFF;
+  text-align: center;
+
+  @media (width <= 1080px) {
+    font-size: 24px;
+  }
+}

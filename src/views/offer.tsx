@@ -14,6 +14,8 @@ export const Offer = () => {
 	const container = useRef(null)
 	const { id } = useParams()
 	const selectedOffer = offers.find(item => item.title.toLowerCase().replaceAll(' ', '-') === id)
+	console.log(0, id)
+	console.log(1, selectedOffer?.title.toLowerCase().replaceAll(' ', '-'))
 
 	useGSAP(() => {
 		gsap.fromTo(
@@ -75,6 +77,8 @@ export const Offer = () => {
 			<p id={'item'} className={styles.offerDescription}>
 				{selectedOffer?.description}
 			</p>
+
+			<p id={'item'} className={styles.offerPrice}>{selectedOffer?.price} PLN</p>
 
 			<div className={styles.divider} />
 
