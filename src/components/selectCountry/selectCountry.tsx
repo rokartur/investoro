@@ -57,7 +57,7 @@ export const SelectCountry = () => {
 				setIsOpen(false)
 			}
 		})
-	}, [])
+	}, [isOpen])
 
 	if (isOpen) {
 		body?.classList.add('tempDisableScroll')
