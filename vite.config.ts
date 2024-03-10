@@ -1,5 +1,4 @@
 import react from '@vitejs/plugin-react'
-import scss from 'rollup-plugin-scss'
 import { defineConfig, splitVendorChunkPlugin } from 'vite'
 
 export default defineConfig(({ mode }) => {
@@ -7,7 +6,6 @@ export default defineConfig(({ mode }) => {
 		plugins: [
 			react(),
 			splitVendorChunkPlugin(),
-			scss(),
 		],
 		publicDir: 'src/public',
 		build: {
@@ -19,7 +17,24 @@ export default defineConfig(({ mode }) => {
 			},
 		},
 		resolve: {
+			alias: {
+				src: '/src',
+			},
 			extensions: ['.ts', '.tsx', '.js', '.css', '.scss'],
+		},
+		compilerOptions: {
+			baseUrl: '.',
+			paths: {
+				'src/*': ['./src/*'],
+			},
+		},
+		manualChunks: {
+			lodash: ['lodash'],
+		},
+		css: {
+			modules: {
+				generateScopedName: '[hash:base64:12]',
+			},
 		},
 		json: {
 			namedExports: false,
@@ -28,9 +43,6 @@ export default defineConfig(({ mode }) => {
 			logOverride: {
 				'this-is-undefined-in-esm': 'silent',
 			},
-		},
-		manualChunks: {
-			lodash: ['lodash'],
 		},
 	}
 })

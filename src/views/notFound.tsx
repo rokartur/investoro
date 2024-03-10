@@ -1,4 +1,4 @@
-import styles from '../styles/notFound.module.scss'
+import styles from '../assets/styles/notFound.module.scss'
 import { useScrollToTop } from '../hooks/useScrollToTop.ts'
 import { SEO } from '../components/seo.tsx'
 import { Link } from 'react-router-dom'

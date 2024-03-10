@@ -17,7 +17,7 @@ body {
   min-height: 99vh;
   height: max-content;
 
-  font-family: system-ui, -apple-system, $font-family, Roboto, sans-serif;
+  font-family: system-ui, -apple-system, var(--font-family), Roboto, sans-serif;
   font-style: normal;
 
   scroll-behavior: smooth;
@@ -62,36 +62,36 @@ html, div, h1, h2, h3, h4, h5, h6, ul, ol, li, p, blockquote, pre, form, fieldse
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay-Extralight.otf");
+  src: url("../font/ClashDisplay-Extralight.otf");
   font-weight: 200;
 }
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay-Light.otf");
+  src: url("../font/ClashDisplay-Light.otf");
   font-weight: 300;
 }
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay-Regular.otf");
+  src: url("../font/ClashDisplay-Regular.otf");
   font-weight: 400;
 }
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay-Medium.otf");
+  src: url("../font/ClashDisplay-Medium.otf");
   font-weight: 500;
 }
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay-Semibold.otf");
+  src: url("../font/ClashDisplay-Semibold.otf");
   font-weight: 600;
 }
 
 @font-face {
   font-family: "Clash Display";
-  src: url("../assets/font/ClashDisplay-Bold.otf");
+  src: url("../font/ClashDisplay-Bold.otf");
   font-weight: 700;
 }

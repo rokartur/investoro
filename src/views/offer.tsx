@@ -1,4 +1,4 @@
-import styles from '../styles/offer.module.scss'
+import styles from '../assets/styles/offer.module.scss'
 import { useParams } from 'react-router-dom'
 import offers from '../assets/data.json'
 import { Photo } from '../components/photo.tsx'

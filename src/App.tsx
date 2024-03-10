@@ -1,4 +1,4 @@
-import './styles/globals.scss'
+import './assets/styles/globals.scss'
 import { useScrollToTop } from './hooks/useScrollToTop.ts'
 import { Provider } from 'react-redux'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'

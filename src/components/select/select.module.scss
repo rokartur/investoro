@@ -1,5 +1,3 @@
-@import '../../styles/variables.scss';
-
 .selectContainer {
   width: 100%;
   height: 48px;
@@ -28,12 +26,12 @@
       align-items: center;
       gap: 8px;
 
-      font: 400 14px/20px $font-family;
+      font: 400 14px/20px var(--font-family);
       color: var(--neutral-600);
 
-      border-top: 1px solid $light-grey;
-      border-bottom: 1px solid $light-grey;
-      border-left: 1px solid $light-grey;
+      border-top: 1px solid var(--light-grey);
+      border-bottom: 1px solid var(--light-grey);
+      border-left: 1px solid var(--light-grey);
       background: var(--neutral-50);
 
       span {
@@ -63,7 +61,7 @@
       border: 1px solid var(--light-grey, #E2E8F0);
       background: var(--Generic-White, #FFF);
 
-      font: 400 14px/20px $font-family;
+      font: 400 14px/20px var(--font-family);
       color: var(--neutral-600);
 
       span {
@@ -94,7 +92,7 @@
     transform: scale(.9) translateY(-15px) ;
     background-color: var(--neutral-50);
     pointer-events: none;
-    border: 1px solid $light-grey;
+    border: 1px solid var(--light-grey);
 
     z-index: 999;
     overflow: hidden;
@@ -134,14 +132,10 @@
     .selectOptionActive {
       @extend .selectOption;
 
-      color: var(--yellow-500);
-      background-color: var(--yellow-500-less);
+      background-color: var(--neutral-100);
 
       &:is(:hover) {
-        color: var(--yellow-500);
-        background-color: var(--yellow-500-less);
-
-        transform: scale(1.01);
+        background-color: var(--neutral-100);
       }
     }
   }

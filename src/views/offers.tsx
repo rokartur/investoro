@@ -1,4 +1,4 @@
-import styles from '../styles/offers.module.scss'
+import styles from '../assets/styles/offers.module.scss'
 import { Select } from '../components/select/select.tsx'
 import { useRef, useState } from 'react'
 import offers from '../assets/data.json'
