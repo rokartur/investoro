@@ -2,28 +2,38 @@ import { useEffect, useRef, useState } from 'react'
 import styles from './selectCountry.module.scss'
 import wretch from 'wretch'
 
-type Country = {
+type Countries = {
 	id: string
 	name: string
 	value: string
 }[]
+
+type Country = {
+	id: string;
+	name: string;
+	value: string;
+}
 
 export const SelectCountry = () => {
 	const [isOpen, setIsOpen] = useState(false)
 	const button = useRef<HTMLButtonElement>(null)
 	const body = document.querySelector<HTMLBodyElement>('body')
 	const [selectedCountry, setSelectedCountry] = useState<string>('')
-	const [countries, setCountries] = useState<Country>([])
+	const [countries, setCountries] = useState<Countries>([])
 
 	useEffect(() => {
 		const fetchCountries = async () => {
-			const res = await wretch('https://restcountries.com/v3.1/all').get().json()
-			const countriesMap = res?.map((country: any) => ({
-				id: country.cca3,
-				name: `${country.flag} ${country.name.common}`,
-				value: country.cca3,
-			}))
-			countriesMap?.sort((a, b) => a.name.localeCompare(b.name))
+			const res: [] = await wretch('https://restcountries.com/v3.1/all').get().json()
+			const countriesMap = res?.map(({ cca3, flag, name }: {
+				cca3: string;
+				flag: string,
+				name: { common: string }
+			}) => ({
+				id: cca3,
+				name: `${flag} ${name.common}`,
+				value: cca3,
+			})) as Country[]
+			countriesMap.sort((a: Country, b: Country) => a.name.localeCompare(b.name))
 			setCountries(countriesMap)
 		}
 

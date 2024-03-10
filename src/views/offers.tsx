@@ -5,6 +5,20 @@ import offers from '../assets/data.json'
 import { Link } from 'react-router-dom'
 import { Column } from '../components/column/column.tsx'
 
+type OfferType = {
+	title: string
+	description: string
+	price: string
+	location: string
+	type: string
+	image: string
+	meters: string
+	bathrooms: number
+	bedrooms: number
+	year_built: string
+	condition: string
+}
+
 export const Offers = () => {
 	const [selectedType, setSelectedType] = useState('all')
 	const [selectedMinPrice, setSelectedMinPrice] = useState('')
@@ -94,7 +108,8 @@ export const Offers = () => {
 								<path
 									d='M9.33856 14.3298C9.33856 15.6198 10.3286 16.6598 11.5586 16.6598H14.0686C15.1386 16.6598 16.0086 15.7498 16.0086 14.6298C16.0086 13.4098 15.4786 12.9798 14.6886 12.6998L10.6586 11.2998C9.86856 11.0198 9.33856 10.5898 9.33856 9.36984C9.33856 8.24984 10.2086 7.33984 11.2786 7.33984H13.7886C15.0186 7.33984 16.0086 8.37984 16.0086 9.66984'
 									stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
-								<path d='M12.6667 6V18' stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
+								<path d='M12.6667 6V18' stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round'
+											strokeLinejoin='round' />
 								<path
 									d='M15.6667 22H9.66669C4.66669 22 2.66669 20 2.66669 15V9C2.66669 4 4.66669 2 9.66669 2H15.6667C20.6667 2 22.6667 4 22.6667 9V15C22.6667 20 20.6667 22 15.6667 22Z'
 									stroke='#4B5563' strokeWidth='1.5' strokeLinecap='round' strokeLinejoin='round' />
@@ -145,14 +160,16 @@ export const Offers = () => {
 						return (selectedType === 'all' || offer.type === selectedType) &&
 							(maxPrice === 0 ? offerPrice >= minPrice : (offerPrice >= minPrice && offerPrice <= maxPrice))
 					})
-					.sort((a: { id: number; price: string; }, b: { id: number; price: string; }) => {
+					.sort((a: OfferType, b: OfferType) => {
 						if (selectedSorting === 'recentlyAdded') {
-							return a.id - b.id
+							return 0
 						} else if (selectedSorting === 'priceAscending') {
 							return Number(a.price.split(',').join('')) - Number(b.price.split(',').join(''))
 						} else if (selectedSorting === 'priceDescending') {
 							return Number(b.price.split(',').join('')) - Number(a.price.split(',').join(''))
 						}
+
+						return 0
 					})
 					.map(({ image, title, location, price, type }, index) => (
 						<Link key={index} className={styles.offer} to={`/offer/${title.toLowerCase().replaceAll(' ', '-')}`}>
