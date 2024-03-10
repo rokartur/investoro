@@ -72,7 +72,7 @@ export const Offer = () => {
 
 			<div className={styles.divider} />
 
-			<p className={styles.offerDescription}>
+			<p id={'item'} className={styles.offerDescription}>
 				{selectedOffer?.description}
 			</p>
 
