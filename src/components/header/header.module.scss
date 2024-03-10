@@ -15,4 +15,11 @@
     font: 600 32px/36px var(--font-family);
     color: #000;
   }
+
+  @media (width <= 585px) {
+    padding: 24px 16px;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 24px;
+  }
 }
