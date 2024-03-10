@@ -1,6 +1,9 @@
 .offerContainer {
   padding: 64px 0 112px 0;
 
+  width: 100%;
+  overflow-x: hidden;
+
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -9,13 +12,11 @@
   background: var(--neutral-50);
 
   @media (width <= 1080px) {
+    padding: 0 0 112px 0;
     gap: 64px;
   }
 
   .offerMainDetails {
-    width: 100%;
-    overflow-x: hidden;
-
     position: relative;
 
     h1 {
@@ -269,6 +270,7 @@
   text-align: center;
 
   @media (width <= 1080px) {
+    margin: 0;
     font-size: 24px;
   }
 }
