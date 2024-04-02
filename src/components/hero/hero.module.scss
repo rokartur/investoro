@@ -14,7 +14,7 @@
     position: relative;
 
     width: 100%;
-    height: max-content;
+    height: 90%;
 
     display: flex;
     justify-content: center;
@@ -53,15 +53,14 @@
 
 .mouseScrollDown {
   position: absolute;
-  bottom: -112px;
-
   font-size: 0.9em;
   border: 2px solid rgba(0, 0, 0, 1);
   display: block;
   width: 1.7em;
   height: 2.8em;
   border-radius: 0.9em;
-  margin: 0 auto;
+  margin: auto;
+  bottom: 0;
   text-decoration: none;
   transition: border 0.2s ease-out;
   cursor: pointer;
