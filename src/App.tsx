@@ -9,10 +9,12 @@ import { Offer } from './views/offer.tsx'
 import { NotFound } from './views/notFound.tsx'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
+import { useSmoothScroll } from './hooks/use-smooth-scroll.ts'
 
 gsap.registerPlugin(ScrollTrigger)
 
 export const App = () => {
+	useSmoothScroll()
 	useScrollToTop()
 
 	return (
